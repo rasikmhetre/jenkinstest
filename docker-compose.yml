@@ -20,6 +20,15 @@ services:
     ports:
       - 8083:8080
       - 50003:50000
+    networks:
+      - jenkinscluster
+  node4:
+    image: localhost:5000/myjenkins
+    ports:
+      - 8084:8080
+      - 50004:50000
+    networks:
+      - jenkinscluster
 networks:
   jenkinscluster: 
     driver: bridge        
